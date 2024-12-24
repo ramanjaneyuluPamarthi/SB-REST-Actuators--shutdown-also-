@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: SB_RS-Actuators_App_02
+server:
+  port: 9090
+
+#used to get the prpoduction ready features of our appli and bind to http get request
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: beans,mappings
+#Shutdown endpoint used to stop the appli it is bind to http POST request
+#url:http://localhost:9090/actuator/shutdown
+  endpoint:
+    shutdown:
+      enabled: true 
